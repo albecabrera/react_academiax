@@ -1,5 +1,6 @@
+// Utilizar componentes
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,22 @@
 </head>
 <body>
   <div id="root"></div>
-
   <script type="text/babel">
-
-    const usuario = {
-      nombre: 'Juan',
-      edad: 30,
-      ciudad: 'Madrid'
-    };
-  
-    const h1 = <h1 className='clase-de-css'>Hello {usuario.nombre}</h1>
-    ReactDOM.render(h1, document.getElementById('root'));
-  </script>
+    
+    
+    function Bienvenido() {
+        return <h1>Bienvenida!</h1>
+    }
+    function App() {
+        return (
+            <div>
+            <Bienvenido />
+            <Bienvenido />
+            <Bienvenido />
+            </div>
+        );
+    }
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
 </html>
