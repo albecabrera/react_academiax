@@ -1,0 +1,47 @@
+
+<!-- // Utilizar componentes -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo!</title>
+    <!-- // Importa React y ReactDOM desde un CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- // Importa Babel para poder usar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    
+    // Crea un ciclo de vida para un reloj
+    class Reloj extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hora: new Date().toLocaleTimeString() };
+      }
+
+      componentDidMount() {
+        this.intervalo = setInterval(() => {
+          this.setState({ hora: new Date().toLocaleTimeString() });
+        }, 1000);
+      }
+
+      componentWillUnmount() {
+        clearInterval(this.intervalo);
+      }
+
+      render() {
+        return <h1>Es ist {this.state.hora} Uhr</h1>;
+      }
+    }
+    // Renderiza el componente Reloj en el elemento con id "root"
+    ReactDOM.render(<Reloj />, document.getElementById('root'));
+
+ 
+     
+  </script>
+</body>
+</html>

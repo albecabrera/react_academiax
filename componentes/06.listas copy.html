@@ -1,0 +1,43 @@
+
+<!-- // Utilizar componentes -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo!</title>
+    <!-- // Importa React y ReactDOM desde un CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- // Importa Babel para poder usar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    
+    function Series() {
+      const lista = ['Silicon Valley', 'Breaking Bad', 'Game of Thrones', 'The Office'];
+      return (
+        <ul>
+          {lista.map((serie) => (
+            <li>{serie}</li>
+          ))}
+        </ul>
+      );  
+       
+    }
+    // Pon otro ejemplo de lista con otros ejemplos de series  
+    function App() {
+      return (
+        <div>
+          <h1>Mis series favoritas</h1>
+          <Series />
+        </div>
+      );
+    }
+    // Renderiza el componente App en el elemento con id "root"
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
