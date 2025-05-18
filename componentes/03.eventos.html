@@ -15,13 +15,11 @@
   <div id="root"></div>
   <script type="text/babel">
     
-    class Bienvenido extends React.Component {
-        render() {
-            return <h1>Bienvenido{this.props.nombre}!</h1>
-        }
+    function Alertador(props) {
+        return <button onClick={(alerta)=> alert('Alerta')}>Click!</button>;
     }
 
-    ReactDOM.render(<Bienvenido />, document.getElementById('root'));
+    ReactDOM.render(<Alertador />, document.getElementById('root'));
   </script>
 </body>
 </html>

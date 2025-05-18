@@ -15,13 +15,18 @@
   <div id="root"></div>
   <script type="text/babel">
     
-    class Bienvenido extends React.Component {
-        render() {
-            return <h1>Bienvenido{this.props.nombre}!</h1>
-        }
+    function Contador(props) {
+      const [contador, setContador] = React.useState(0);
+        return (
+            <div>
+                <h1>{contador}</h1>
+                <button onClick={() => setContador(contador + 1)}>Click!</button>
+                
+            </div>
+        );
     }
 
-    ReactDOM.render(<Bienvenido />, document.getElementById('root'));
+    ReactDOM.render(<Contador />, document.getElementById('root'));
   </script>
 </body>
 </html>

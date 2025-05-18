@@ -15,13 +15,14 @@
   <div id="root"></div>
   <script type="text/babel">
     
-    class Bienvenido extends React.Component {
-        render() {
-            return <h1>Bienvenido{this.props.nombre}!</h1>
+    function Condiconales(props) {
+        if (props.autenticado) {
+            return <h1>Bienvenido {props.nombre}</h1>;
         }
+      return <h1>No autorizado</h1>;
     }
-
-    ReactDOM.render(<Bienvenido />, document.getElementById('root'));
+    ReactDOM.render(<Condiconales  />, document.getElementById('root'));
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
 </html>
