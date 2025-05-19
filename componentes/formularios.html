@@ -1,0 +1,62 @@
+// Hacer un formulario de contacto con los siguientes campos:
+
+<!-- // Utilizar componentes -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo!</title>
+    <!-- // Importa React y ReactDOM desde un CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- // Importa Babel para poder usar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Formulario extends React.Component {
+        render() {
+            return (
+                <form>
+                    <div>
+                        <label htmlFor="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                    <div>
+                        <label htmlFor="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje"></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            );
+        }
+      constructor(props) {
+        super(props);
+        this.state = {
+          nombre: '',
+          email: '',
+          mensaje: ''
+        };
+    }
+    
+Rreact.DOM.render(<Formulario />, document.getElementById('root'));
+    }
+    
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Nombre: ${this.state.nombre}, Email: ${this.state.email}, Mensaje: ${this.state.mensaje}`);
+    }
+     
+  </script>
+</body>
+</html>
